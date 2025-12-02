@@ -88,18 +88,81 @@
 
 ## 5. Instruções de instalação e execução
 
+### ✅ Clonar o repositório
+```bash
+git clone https://github.com/HermesonxDevII/sustenta-plus.git
+cd sustenta-plus
+```
+
+### **Aviso**
+- A forma mais rápida e recomendada de iniciar o projeto é utilizando o Docker e o Docker Compose. A arquitetura do sistema já está totalmente conteinerizada, permitindo que a aplicação e seus serviços associados sejam inicializados com um único comando.
+
+```bash
+docker compose up --build -d
+```
+
+- Após isso basta acessar essa url:
+```bash
+http://localhost:8080/
+```
+
+- Para instalação manual seguir as instruções abaixo.
+
 ### Pré-requisitos
+
+- Node.js (versão 18.x ou superior)
+- TypeScript
+- Yarn
+- Mysql 8
+
 ### Passo a passo para instalação
+
+#### ✅ Instalar Dependencias do Frontend
+```bash
+cd sustenta_plus\frontend\web
+```
+
+```bash
+yarn install
+```
+
+#### ✅ Instalar Dependencias do Backend
+```bash
+cd sustenta_plus\backend
+```
+
+```bash
+yarn install
+```
+
+```bash
+npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all
+```
+
 ### Comandos para execução
+
+- Rodar em ambos Frontend e Backend
+
+```bash
+yarn dev 
+```
+
 ### Configurações necessárias
+
+- Na raiz do diretorio `/Backend` tem um `.env.example`, basta renomea-lo para .env
 
 ---
 
 ## 6. Acesso ao sistema
 
-### Acesso ao sistema
-### Credenciais de teste
+### URL de acesso
 
+### Credenciais de teste
+| Email               | Senha   | Tipo de usuário |
+| ------------------- | ------- | --------------- |
+| admin@gmail.com     | 123456  | Admin           |
+| user@gmail.com      | 123456  | Padrão          |
+| collector@gmail.com | 123456  | Coletor         | 
 ---
 
 ## 7. Validação com Público-Alvo
@@ -122,89 +185,9 @@
 | [Leonardo Estevão Silva Dos Santos]      | [2315238]  | Testes                     | 
 ---
 
-## 📦 Instalação e Configuração
-
-### ✅ Clonar o repositório
-```bash
-git clone https://github.com/HermesonxDevII/sustenta-plus.git
-cd sustenta-plus
-```
-
-### ✅ Criar ambiente virtual
-```bash
-python -m venv venv
-```
-
-## ✅ Acessar ambiente virtual
-
-#### ✅ Windows
-```bash
-venv\Scripts\activate
-```
-
-#### ✅ Linux/Mac
-```bash
-source venv/bin/activate
-```
-
-### ✅ Instalar dependências
-```bash
-pip install -r requirements.txt
-```
-
-### ✅ Configurando variáveis de ambiente
-
-- Após os passos acima abra o projeto no vs code para editar as variáveis de ambiente, se ja estiver no diretorio dele no terminal basta digitar `code .` que o projeto sera aberto.
-
-- Dentro do projeto basta editar o nome do arquivo `.env.example` para `.env` e preencher as variáveis de la que são essas abaixo.
-
-```bash
-DATABASE_URL=
-TEST_DATABASE_URL=
-AUTH_SECRET_KEY=
-AUTH_ALGORITHM=
-```
-
-- As variáveis de banco (`DATABASE_URL` e `TEST_DATABASE_URL`) não são obrigatorias pois ja esta configurado como padrão para usar sqlite na aplicação, mas se quiser usar outro banco coloque o `DSN` dele nessas duas variáveis.
-
-- Para gerar sua `AUTH_SECRET_KEY` para digitar no terminal o comando abaixo, e copiar e colar o resultado dele na variavel.
-
-```bash
-python generate_secret.py
-```
-
-- E sobre o `AUTH_ALGORITHM` você pode usar o que quiser, por padrão usamos `HS256`.
-
-### ✅ Executar aplicação
-```bash
-uvicorn src.main:app --reload
-```
-
----
-
-## 👩‍💻 Atribuição de funções:
-
-
----
-
-## 📚 Documentação de Rotas
+## 📚 Outras documentações
 - 🗂️ [Arquitetura](docs/architecture.md)
 - 🔐 [Authenticação](docs/authentication.md)
 - 🏢 [Empresas](docs/companies.md)
 - 🏫 [Instituições](docs/institutions.md)
 - 🎁 [Doações](docs/donations.md)
-
----
-
-## 📥 Coleção Postman
-
-Na raiz do projeto existe uma pasta chamada **`/postman`** contendo a coleção completa de requisições para facilitar os testes da API.
-
----
-
-## 🐳 Tecnologias Utilizadas
-
-- Python
-- FastAPI
-
----
