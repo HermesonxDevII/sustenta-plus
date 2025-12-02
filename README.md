@@ -60,7 +60,6 @@
 ## 4. Arquitetura do sistema
 
 ### Visão geral da arquitetura implementada
-
 - A aplicação foi desenvolvida utilizando uma arquitetura do tipo cliente-servidor, onde o front-end é responsável pela interface com o usuário e o back-end realiza o processamento das informações, a comunicação com o banco de dados e as regras de negócio.
 
 ### Componentes principais
@@ -109,7 +108,6 @@ http://localhost:8080/
 - Para instalação manual seguir as instruções abaixo.
 
 ### Pré-requisitos
-
 - Node.js (versão 18.x ou superior)
 - TypeScript
 - Yarn
@@ -140,7 +138,6 @@ npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all
 ```
 
 ### Comandos para execução
-
 - Rodar em ambos Frontend e Backend
 
 ```bash
@@ -148,7 +145,6 @@ yarn dev
 ```
 
 ### Configurações necessárias
-
 - Na raiz do diretorio `/Backend` tem um `.env.example`, basta renomea-lo para .env
 
 ---
@@ -163,6 +159,7 @@ yarn dev
 | admin@gmail.com     | 123456  | Admin           |
 | user@gmail.com      | 123456  | Padrão          |
 | collector@gmail.com | 123456  | Coletor         | 
+
 ---
 
 ## 7. Validação com Público-Alvo
@@ -175,7 +172,6 @@ yarn dev
 ---
 
 ## 8. Equipe de desenvolvimento
-
 | Nome                                     | Matricula  | Constribuição              |
 | ---------------------------------------- | ---------- | -------------------------- |
 | [Francisco Hermeson O. dos Santos]       | [2326241]  | Desenvolvedor(a)           |
@@ -185,9 +181,27 @@ yarn dev
 | [Leonardo Estevão Silva Dos Santos]      | [2315238]  | Testes                     | 
 ---
 
+## 8. Uso
+
+### Admin
+- Recebe os chamados(denuncias e agendamento de coletas) e analisa se são pedidos validos ou não para serem executados.
+
+### User
+- Abre os chamados.
+
+### Collector
+- Aceita os pedidos de coleta para serem executados.
+
+# Notas de desenvolvimento
+
+- Inicialmente o projeto foi dividido em dois respositorio, por isso caso queira verificar os commits das mudanças que foram sendo implementadas com o tempo abaixo segue esses dois repositórios.
+
+- [Sustenta Plus - Frontend](https://github.com/HermesonxDevII/sustenta-plus-frontend)
+- [Sustenta Plus - Backend](https://github.com/HermesonxDevII/sustenta-plus-backend)
+
+---
+
 ## 📚 Outras documentações
-- 🗂️ [Arquitetura](docs/architecture.md)
-- 🔐 [Authenticação](docs/authentication.md)
-- 🏢 [Empresas](docs/companies.md)
-- 🏫 [Instituições](docs/institutions.md)
-- 🎁 [Doações](docs/donations.md)
+- 🗄️ [Requisitos](./docs/requirements/requirements.md)
+- 🔌 [Arquitetura](./docs/architecture/architecture.md)
+- 🌐 [API](./docs/api/api_documentation.md)
