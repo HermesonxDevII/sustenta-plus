@@ -10,7 +10,7 @@ class ReportController {
 
   async index(req: Request, res: Response): Promise<Response> {
     try {
-      const { id, ability } = req.user;
+      const { id, ability } = req.user!;
 
       const page = parseInt(req.query.page as string || '1');
       const limit = parseInt(req.query.limit as string || String(DEFAULT_LIMIT));
@@ -78,7 +78,7 @@ class ReportController {
     const transaction = await sequelize.transaction();
 
     try {
-      const { id: user_id } = req.user;
+      const { id: user_id } = req.user!;
       const {
         title,
         description,

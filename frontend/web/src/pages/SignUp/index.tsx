@@ -22,7 +22,7 @@ const SignUp: React.FC = () => {
   });
 
   console.log(formState)
-
+  
   const options = [
     { name: 'Usuário', value: 2 },
     { name: 'Coletor', value: 3 },

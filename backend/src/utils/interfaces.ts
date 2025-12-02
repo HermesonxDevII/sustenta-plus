@@ -7,6 +7,6 @@ interface JwtPayload {
     exp?: number;
 }
 
-export interface AuthRequest extends Request {
-    user?: JwtPayload; 
+export interface AuthRequest {
+    user?: JwtPayload;
 }
